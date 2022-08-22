@@ -7,6 +7,7 @@ type statProps = {
   discharged?: number;
   totalActiveCases?: number;
   totalConfirmedCases?: number;
+  isLoading?: boolean;
 };
 
 const Stats = ({
@@ -14,6 +15,7 @@ const Stats = ({
   discharged,
   totalActiveCases,
   totalConfirmedCases,
+  isLoading,
 }: statProps) => {
   const stats = [
     {
@@ -33,7 +35,7 @@ const Stats = ({
     },
     {
       title: "Total Death",
-      figure: death?.toString(),
+      figure: death?.toLocaleString(),
       txtColor: "#f33636",
     },
   ];
@@ -41,11 +43,11 @@ const Stats = ({
     <StatsStylesWrapper>
       {stats.map(({ title, figure, txtColor }) => (
         <StatCard
-          // bdColor="red"
+          isLoading={!figure ? true : false}
+          key={title}
           txtColor={txtColor}
           title={figure}
           figure={title}
-          // percent="20"
         />
       ))}
     </StatsStylesWrapper>

@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   html,
   body{
     width: 100%;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1rem;
     margin: 0;
     padding: 0;

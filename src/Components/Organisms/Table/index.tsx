@@ -71,7 +71,7 @@ const Table = ({
                           key={`${_id}-${_colIndex}`}
                           className={`${col.key}`}
                         >
-                          {row[col.key]}
+                          {row[col.key].toLocaleString()}
                         </td>
                       ))}
                     </tr>

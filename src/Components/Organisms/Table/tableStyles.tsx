@@ -54,17 +54,23 @@ export const TableWrapper = styled.div<Props>`
       tr {
         color: white;
         td {
-          font-size: 0.8rem;
+          font-size: 1.2vw;
           line-height: 1.2;
           font-weight: 500;
           text-align: left;
-          padding-left: 1rem;
+          padding-left: 0.5rem;
           font-weight: 700;
+          text-transform: uppercase;
+
+          @media screen and (max-width: 640px) {
+            font-size: 0.5rem;
+          }
         }
 
         td:not(:first-child) {
-          width: 7rem;
+          width: 15%;
           text-align: center;
+          text-transform: lowercase;
         }
 
         .state {
@@ -72,7 +78,7 @@ export const TableWrapper = styled.div<Props>`
         }
         .confirmedCases {
           background-color: peachpuff;
-          color: #6d6d6d;
+          color: #494949;
         }
         .casesOnAdmission {
           background-color: #ff825c;
@@ -92,7 +98,7 @@ export const TableWrapper = styled.div<Props>`
     }
 
     th:not(:first-child) {
-      width: 7.2rem;
+      width: 15%;
 
       & > div {
         display: flex;
@@ -105,7 +111,7 @@ export const TableWrapper = styled.div<Props>`
 
     th {
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 1.5vw;
       line-height: 1.28571429;
       padding: 0.8rem 0 0.9rem;
       font-weight: 600;
@@ -115,6 +121,10 @@ export const TableWrapper = styled.div<Props>`
         display: flex;
         align-items: center;
         padding-left: 1rem;
+      }
+
+      @media screen and (max-width: 640px) {
+        font-size: 2.5vw;
       }
     }
 
@@ -137,38 +147,6 @@ export const TableWrapper = styled.div<Props>`
       font-size: 0.875rem;
       color: ${({ theme }) => theme.colors.grey1};
       margin-left: 1rem;
-    }
-  }
-`;
-
-export const TableWrapperMobile = styled.div`
-  display: none;
-
-  @media screen and (max-width: 1024px) {
-    display: block;
-
-    .table-item-cont {
-      display: flex;
-      align-items: center;
-      border-top: 1px solid ${({ theme }) => theme.colors.grey5};
-      padding: 0.6rem 1rem;
-    }
-
-    .row-items {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      margin-left: 0;
-    }
-
-    .title-info {
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .other-info {
-      color: ${(props) => props.theme.colors.grey2};
     }
   }
 `;

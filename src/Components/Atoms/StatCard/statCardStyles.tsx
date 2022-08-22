@@ -20,29 +20,6 @@ export const StatCardWrap = styled.div<{
     css`
       color: ${textColor};
     `}
-  
-  .icon-cont {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .percent-figure {
-      width: max-content;
-      height: max-content;
-      padding: 0.3rem 0.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 10px;
-      font-size: 0.7rem;
-      ${({ borderColor }) =>
-        borderColor &&
-        css`
-          border: 1px solid ${borderColor};
-        `}
-    }
-  }
 
   .text-content {
     display: flex;
@@ -58,6 +35,19 @@ export const StatCardWrap = styled.div<{
 
     span {
       font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .text-content {
+      h3 {
+        font-size: 5vw;
+      }
+
+      span {
+        font-size: 4vw;
+      }
     }
   }
 `;

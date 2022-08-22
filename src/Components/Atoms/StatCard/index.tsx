@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import { Box } from "../IconBox";
+import Loader from "../Loader";
 import { StatCardWrap } from "./statCardStyles";
 
 type StatCardprops = {
@@ -9,27 +10,24 @@ type StatCardprops = {
   percent?: string;
   bdColor?: string;
   txtColor?: string;
+  isLoading?: boolean;
 };
 const StatCard = ({
-  icon,
   figure,
   title,
-  percent,
   bdColor,
   txtColor,
+  isLoading,
 }: StatCardprops) => {
   return (
     <StatCardWrap borderColor={bdColor} textColor={txtColor}>
-      {/* <div className="icon-cont">
-        <Box>{icon}</Box>
-        <div className="percent-figure">
-          <span>+{percent}%</span>
+      {isLoading && <Loader />}
+      {!isLoading && (
+        <div className="text-content">
+          <h3>{figure}</h3>
+          <span>{title}</span>
         </div>
-      </div> */}
-      <div className="text-content">
-        <h3>{figure}</h3>
-        <span>{title}</span>
-      </div>
+      )}
     </StatCardWrap>
   );
 };

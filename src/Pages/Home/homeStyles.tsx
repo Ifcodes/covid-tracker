@@ -20,4 +20,11 @@ export const HomeWrapper = styled.section`
   .stats-wrapper {
     width: 100%;
   }
+
+  @media screen and (max-width: 640px) {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    padding: 1rem;
+  }
 `;
